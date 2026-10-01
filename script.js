@@ -48,7 +48,6 @@ if (menuToggle && navMenu) {
   navMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
-
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
@@ -177,11 +176,11 @@ function getSelectedPackagePrice() {
 function updateTotal() {
   let total = getSelectedPackagePrice();
 
-  if (extraRevision && extraRevision.checked) {
+  if (extraRevision?.checked) {
     total += 3;
   }
 
-  if (rushOrder && rushOrder.checked) {
+  if (rushOrder?.checked) {
     total += 7;
   }
 
@@ -194,13 +193,8 @@ packageOptions.forEach((option) => {
   option.addEventListener("change", updateTotal);
 });
 
-if (extraRevision) {
-  extraRevision.addEventListener("change", updateTotal);
-}
-
-if (rushOrder) {
-  rushOrder.addEventListener("change", updateTotal);
-}
+extraRevision?.addEventListener("change", updateTotal);
+rushOrder?.addEventListener("change", updateTotal);
 
 /* =====================================
    PRICE CARD BUTTONS
@@ -239,50 +233,66 @@ const surpriseResult = $("#surpriseResult");
 
 const surpriseIdeas = [
   {
-    theme: "Neon Arcade",
-    colors: "Electric blue, purple, pink",
+    event: "Birthday",
+    theme: "Spooky Halloween Birthday",
+    colors: "Black, orange, purple",
     request:
-      "Use a glowing arcade/game-night style with neon lights and pixel details.",
+      "Use pumpkins, bats, spider webs, spooky lighting and a modern Halloween party style.",
   },
   {
+    event: "Birthday",
     theme: "Basketball Game Night",
     colors: "Orange, black, white",
     request:
-      "Make it feel like a real basketball game poster with court-inspired graphics.",
+      "Make it feel like a real basketball game poster with court-inspired graphics and bold typography.",
   },
   {
+    event: "Gaming Party",
+    theme: "Neon Arcade",
+    colors: "Electric blue, purple, pink",
+    request:
+      "Use glowing arcade graphics, neon lights and pixel-inspired details.",
+  },
+  {
+    event: "Birthday",
     theme: "Midnight Party",
     colors: "Black, navy, silver",
     request:
-      "Create a dark nighttime look with stars, glow effects and a premium feel.",
+      "Create a dark nighttime look with stars, glow effects and a premium atmosphere.",
   },
   {
+    event: "Birthday",
     theme: "Retro 2000s",
     colors: "Pink, blue, silver",
     request:
       "Use a fun early-2000s style with shiny details, playful text and retro graphics.",
   },
   {
-    theme: "Spooky Neon",
-    colors: "Black, purple, orange",
+    event: "Halloween",
+    theme: "Haunted House",
+    colors: "Black, orange, dark purple",
     request:
-      "Mix Halloween elements with neon lighting for a modern spooky invitation.",
+      "Build a spooky haunted-house atmosphere with fog, pumpkins, bats and spider webs.",
   },
   {
+    event: "Wedding",
     theme: "Luxury Celebration",
     colors: "Black, gold, cream",
     request:
       "Make the invitation elegant and clean with subtle luxury details.",
   },
   {
+    event: "Birthday",
     theme: "Movie Premiere",
     colors: "Black, red, gold",
-    request: "Design it like a movie premiere poster with dramatic typography.",
+    request:
+      "Design it like a movie premiere poster with dramatic typography and cinematic details.",
   },
   {
+    event: "Baby Shower",
     theme: "Cloud Nine",
     colors: "White, baby blue, lavender",
-    request: "Use soft clouds, dreamy lighting and a fun floating feeling.",
+    request: "Use soft clouds, dreamy lighting and a clean floating feeling.",
   },
 ];
 
@@ -291,9 +301,14 @@ if (surpriseButton) {
     const idea =
       surpriseIdeas[Math.floor(Math.random() * surpriseIdeas.length)];
 
+    const eventType = $("#eventType");
     const theme = $("#theme");
     const colors = $("#colors");
     const extraRequests = $("#extraRequests");
+
+    if (eventType) {
+      eventType.value = idea.event;
+    }
 
     if (theme) {
       theme.value = idea.theme;
@@ -309,12 +324,26 @@ if (surpriseButton) {
 
     if (surpriseResult) {
       surpriseResult.innerHTML = `
-          <strong>✦ Your surprise theme: ${idea.theme}</strong><br>
-          Colors: ${idea.colors}<br>
-          Idea: ${idea.request}
-        `;
+        <strong>✦ Your surprise theme: ${idea.theme}</strong>
+        <br>
+        Event: ${idea.event}
+        <br>
+        Colors: ${idea.colors}
+        <br>
+        Idea: ${idea.request}
+      `;
 
       surpriseResult.classList.add("show");
+    }
+
+    const formSection = surpriseButton.closest(".form-section");
+
+    if (formSection) {
+      formSection.classList.add("surprise-active");
+
+      setTimeout(() => {
+        formSection.classList.remove("surprise-active");
+      }, 1000);
     }
   });
 }
@@ -329,7 +358,6 @@ async function copyText(text) {
   try {
     if (navigator.clipboard && window.isSecureContext) {
       await navigator.clipboard.writeText(text);
-
       return true;
     }
   } catch (error) {
@@ -390,11 +418,10 @@ function openActionModal(message, title = "You're ready!") {
 
   if (modalText) {
     modalText.textContent =
-      "Your message has been copied. Open Instagram and paste it into your DM to @party_pixelstudio.";
+      "Your message is ready. Instagram will open so you can paste it into your DM to @party_pixelstudio.";
   }
 
   actionModal.classList.add("show");
-
   actionModal.setAttribute("aria-hidden", "false");
 
   document.body.classList.add("no-scroll");
@@ -404,41 +431,32 @@ function closeActionModal() {
   if (!actionModal) return;
 
   actionModal.classList.remove("show");
-
   actionModal.setAttribute("aria-hidden", "true");
 
   document.body.classList.remove("no-scroll");
 }
 
-if (closeModalButton) {
-  closeModalButton.addEventListener("click", closeActionModal);
-}
+closeModalButton?.addEventListener("click", closeActionModal);
 
 if (actionModal) {
   const backdrop = actionModal.querySelector(".modal-backdrop");
 
-  if (backdrop) {
-    backdrop.addEventListener("click", closeActionModal);
-  }
+  backdrop?.addEventListener("click", closeActionModal);
 }
 
-if (copyModalMessage) {
-  copyModalMessage.addEventListener("click", async () => {
-    const success = await copyText(currentMessage);
+copyModalMessage?.addEventListener("click", async () => {
+  const success = await copyText(currentMessage);
 
-    copyModalMessage.textContent = success ? "Copied ✓" : "Copy failed";
+  copyModalMessage.textContent = success ? "Copied ✓" : "Copy failed";
 
-    setTimeout(() => {
-      copyModalMessage.textContent = "Copy Again";
-    }, 1600);
-  });
-}
+  setTimeout(() => {
+    copyModalMessage.textContent = "Copy Again";
+  }, 1600);
+});
 
-if (openInstagram) {
-  openInstagram.addEventListener("click", () => {
-    window.open(INSTAGRAM_DM, "_blank", "noopener,noreferrer");
-  });
-}
+openInstagram?.addEventListener("click", () => {
+  window.open(INSTAGRAM_DM, "_blank", "noopener,noreferrer");
+});
 
 /* =====================================
    ORDER FORM
@@ -480,7 +498,7 @@ if (customDesignForm) {
 
     const total = orderTotal?.textContent || "$10";
 
-    currentMessage = `🎉 PARTY PIXEL STUDIO ORDER
+    currentMessage = `🎃 PARTY PIXEL STUDIO ORDER
 
 Name: ${customerName}
 Instagram: ${customerInstagram}
@@ -504,9 +522,12 @@ Estimated total: ${total}
 
 Sent from Party Pixel Studio website.`;
 
-    await copyText(currentMessage);
+    const copied = await copyText(currentMessage);
 
-    openActionModal(currentMessage, "Your order is ready!");
+    openActionModal(
+      currentMessage,
+      copied ? "Your order is ready!" : "Your order is ready to copy!",
+    );
   });
 }
 
@@ -534,9 +555,12 @@ Email: ${email}
 
 Please send me updates about new invitation designs, offers and announcements.`;
 
-    await copyText(subscriptionMessage);
+    const copied = await copyText(subscriptionMessage);
 
-    openActionModal(subscriptionMessage, "Updates request ready!");
+    openActionModal(
+      subscriptionMessage,
+      copied ? "Updates request ready!" : "Updates request ready to copy!",
+    );
 
     if (subscriberEmail) {
       subscriberEmail.value = "";
@@ -565,15 +589,10 @@ $$(".faq-question").forEach((question) => {
 ===================================== */
 
 const chatButton = $("#chatButton");
-
 const chatBox = $("#chatBox");
-
 const closeChat = $("#closeChat");
-
 const chatForm = $("#chatForm");
-
 const chatInput = $("#chatInput");
-
 const chatMessages = $("#chatMessages");
 
 if (chatButton && chatBox) {
@@ -593,7 +612,6 @@ if (chatButton && chatBox) {
 if (closeChat && chatBox) {
   closeChat.addEventListener("click", () => {
     chatBox.classList.remove("show");
-
     chatBox.setAttribute("aria-hidden", "true");
   });
 }
@@ -620,7 +638,7 @@ function getChatAnswer(question) {
   }
 
   if (q.includes("order") || q.includes("buy")) {
-    return "Go to the Order section, fill out your details, and the website will prepare a message for your Instagram DM to @party_pixelstudio.";
+    return "Go to the Order section, fill out your details, and the website will prepare and copy a message for your Instagram DM to @party_pixelstudio.";
   }
 
   if (q.includes("rsvp")) {
@@ -648,31 +666,29 @@ function getChatAnswer(question) {
   }
 
   if (q.includes("hello") || q.includes("hey") || q.includes("hi")) {
-    return "Hey! 👋 I can help with prices, orders, RSVP, revisions, rush orders, subscriptions and Instagram.";
+    return "Hey! I can help with prices, orders, RSVP, revisions, rush orders, subscriptions and Instagram.";
   }
 
   return "I can help with prices, orders, RSVP, revisions, rush orders, subscriptions or Instagram. Try asking about one of those!";
 }
 
-if (chatForm) {
-  chatForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+chatForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    if (!chatInput) return;
+  if (!chatInput) return;
 
-    const question = chatInput.value.trim();
+  const question = chatInput.value.trim();
 
-    if (!question) return;
+  if (!question) return;
 
-    addChatMessage(question, true);
+  addChatMessage(question, true);
 
-    chatInput.value = "";
+  chatInput.value = "";
 
-    setTimeout(() => {
-      addChatMessage(getChatAnswer(question));
-    }, 250);
-  });
-}
+  setTimeout(() => {
+    addChatMessage(getChatAnswer(question));
+  }, 250);
+});
 
 /* =====================================
    ESCAPE KEY

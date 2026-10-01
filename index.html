@@ -9,7 +9,7 @@
       content="Party Pixel Studio creates custom digital invitations for birthdays, weddings, gaming parties, Halloween and more."
     />
 
-    <meta name="theme-color" content="#07111f" />
+    <meta name="theme-color" content="#080509" />
 
     <title>Party Pixel Studio | Digital Invitations</title>
 
@@ -17,13 +17,22 @@
   </head>
 
   <body>
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- HALLOWEEN DECOR -->
+    <div class="halloween-decor" aria-hidden="true">
+      <span class="decor pumpkin pumpkin-1">🎃</span>
+      <span class="decor pumpkin pumpkin-2">🎃</span>
+      <span class="decor bat bat-1">🦇</span>
+      <span class="decor bat bat-2">🦇</span>
+      <span class="decor spider spider-1">🕷️</span>
+      <span class="decor spider spider-2">🕷️</span>
+      <span class="web web-1">╲╲╲</span>
+      <span class="web web-2">╱╱╱</span>
+    </div>
 
+    <!-- NAVBAR -->
     <header class="navbar" id="top">
       <a href="#home" class="logo-link" aria-label="Party Pixel Studio home">
-        <img src="image/logo.png" alt="Party Pixel Studio" />
+        <img src="image/halloweenlogo.png" alt="Party Pixel Studio" />
       </a>
 
       <button
@@ -48,10 +57,7 @@
     </header>
 
     <main>
-      <!-- =========================
-           HERO
-      ========================== -->
-
+      <!-- HERO -->
       <section class="hero" id="home">
         <div class="hero-content">
           <div class="hero-badge">✦ PARTY PIXEL STUDIO</div>
@@ -116,10 +122,7 @@
         </div>
       </section>
 
-      <!-- =========================
-           DESIGNS
-      ========================== -->
-
+      <!-- DESIGNS -->
       <section class="section" id="designs">
         <div class="section-heading">
           <span class="section-label">OUR WORK</span>
@@ -147,7 +150,6 @@
                 src="image/image1.png"
                 alt="Basketball birthday invitation"
               />
-
               <span class="design-tag">BIRTHDAY</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -166,7 +168,6 @@
               data-title="Gaming invitation"
             >
               <img src="image/image2.png" alt="Gaming birthday invitation" />
-
               <span class="design-tag">GAMING</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -184,11 +185,7 @@
               data-image="image3.png"
               data-title="Superhero invitation"
             >
-              <img
-                src="image/image3.png"
-                alt="Spider-Man birthday invitation"
-              />
-
+              <img src="image/image3.png" alt="Superhero birthday invitation" />
               <span class="design-tag">SUPERHERO</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -206,11 +203,7 @@
               data-image="image4.png"
               data-title="Halloween invitation"
             >
-              <img
-                src="image/image4.png"
-                alt="Halloween birthday invitation"
-              />
-
+              <img src="image/image4.png" alt="Halloween birthday invitation" />
               <span class="design-tag">HALLOWEEN</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -228,11 +221,7 @@
               data-image="image6.png"
               data-title="Gender reveal invitation"
             >
-              <img
-                src="image/image6.png"
-                alt="Gender reveal invitation"
-              />
-
+              <img src="image/image6.png" alt="Gender reveal invitation" />
               <span class="design-tag">GENDER REVEAL</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -251,7 +240,6 @@
               data-title="Wedding invitation"
             >
               <img src="image/image7.png" alt="Wedding invitation" />
-
               <span class="design-tag">WEDDING</span>
               <span class="view-chip">View ↗</span>
             </button>
@@ -265,31 +253,19 @@
           <article class="custom-design-card">
             <div class="custom-design-content">
               <span>YOUR IDEA</span>
-
               <h3>Make something completely yours.</h3>
-
               <p>
                 Tell us your theme, colors and idea. We'll build it around your
                 celebration.
               </p>
-
-              <a href="#order" class="text-link">
-                Start a custom design →
-              </a>
+              <a href="#order" class="text-link"> Start a custom design → </a>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- =========================
-           IMAGE PREVIEW
-      ========================== -->
-
-      <div
-        class="image-overlay hidden"
-        id="imageOverlay"
-        aria-hidden="true"
-      >
+      <!-- IMAGE PREVIEW -->
+      <div class="image-overlay hidden" id="imageOverlay" aria-hidden="true">
         <button
           class="image-overlay-close"
           type="button"
@@ -299,14 +275,10 @@
         </button>
 
         <img src="" alt="" />
-
         <p></p>
       </div>
 
-      <!-- =========================
-           ENVELOPE
-      ========================== -->
-
+      <!-- ENVELOPE -->
       <section class="section envelope-section">
         <div class="section-heading">
           <span class="section-label">PREMIUM EXPERIENCE</span>
@@ -330,17 +302,11 @@
               type="button"
               aria-label="Open invitation envelope"
             >
-              <img
-                src="image/image5.png"
-                alt="Closed invitation envelope"
-              />
+              <img src="image/image5.png" alt="Closed invitation envelope" />
             </button>
 
             <div class="envelope-opened" id="envelopeOpened">
-              <img
-                src="image/image6.png"
-                alt="Invitation inside envelope"
-              />
+              <img src="image/image6.png" alt="Invitation inside envelope" />
             </div>
           </div>
 
@@ -356,16 +322,11 @@
         </div>
       </section>
 
-      <!-- =========================
-           PRICING
-      ========================== -->
-
+      <!-- PRICING -->
       <section class="section pricing-section" id="pricing">
         <div class="section-heading">
           <span class="section-label">SIMPLE PRICING</span>
-
           <h2>Choose your package.</h2>
-
           <p>No confusing tiers. Pick what fits your invitation.</p>
         </div>
 
@@ -377,7 +338,6 @@
             </div>
 
             <h3>Basic Digital</h3>
-
             <div class="price">$10</div>
 
             <p>A personalized digital invitation for your celebration.</p>
@@ -408,7 +368,6 @@
             </div>
 
             <h3>Interactive</h3>
-
             <div class="price">$15</div>
 
             <p>Add RSVP features and more customization.</p>
@@ -437,7 +396,6 @@
             </div>
 
             <h3>Premium Custom</h3>
-
             <div class="price">$20</div>
 
             <p>A more advanced invitation with premium customization.</p>
@@ -463,7 +421,6 @@
         <div class="addons">
           <div class="addon-heading">
             <span class="section-label">OPTIONAL ADD-ONS</span>
-
             <h3>Need a little extra?</h3>
           </div>
 
@@ -473,7 +430,6 @@
                 <strong>Extra Revision</strong>
                 <p>One more revision after your included revisions.</p>
               </div>
-
               <strong>+$3</strong>
             </div>
 
@@ -482,17 +438,13 @@
                 <strong>Rush Order</strong>
                 <p>Request a faster turnaround.</p>
               </div>
-
               <strong>+$7</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-           RSVP
-      ========================== -->
-
+      <!-- RSVP -->
       <section class="section rsvp-section">
         <div class="rsvp-layout">
           <div>
@@ -509,25 +461,10 @@
             </p>
 
             <div class="rsvp-features">
-              <div>
-                <strong>01</strong>
-                <span>Guest name</span>
-              </div>
-
-              <div>
-                <strong>02</strong>
-                <span>Yes / No</span>
-              </div>
-
-              <div>
-                <strong>03</strong>
-                <span>Guest count</span>
-              </div>
-
-              <div>
-                <strong>04</strong>
-                <span>Custom questions</span>
-              </div>
+              <div><strong>01</strong><span>Guest name</span></div>
+              <div><strong>02</strong><span>Yes / No</span></div>
+              <div><strong>03</strong><span>Guest count</span></div>
+              <div><strong>04</strong><span>Custom questions</span></div>
             </div>
           </div>
 
@@ -540,7 +477,6 @@
 
             <div class="phone-content">
               <small>YOU'RE INVITED</small>
-
               <h3>Are you coming?</h3>
 
               <input type="text" placeholder="Your name" disabled />
@@ -550,11 +486,7 @@
                 <button type="button" disabled>No</button>
               </div>
 
-              <input
-                type="text"
-                placeholder="Number of guests"
-                disabled
-              />
+              <input type="text" placeholder="Number of guests" disabled />
 
               <button class="fake-submit" type="button" disabled>
                 Submit RSVP
@@ -564,10 +496,7 @@
         </div>
       </section>
 
-      <!-- =========================
-           ORDER
-      ========================== -->
-
+      <!-- ORDER -->
       <section class="section custom-section" id="order">
         <div class="section-heading">
           <span class="section-label">CUSTOM ORDER</span>
@@ -595,7 +524,6 @@
             <div class="form-grid">
               <label>
                 Your name
-
                 <input
                   type="text"
                   id="customerName"
@@ -606,7 +534,6 @@
 
               <label>
                 Instagram username
-
                 <input
                   type="text"
                   id="customerInstagram"
@@ -617,7 +544,6 @@
 
               <label>
                 Email
-
                 <input
                   type="email"
                   id="customerEmail"
@@ -628,7 +554,6 @@
 
               <label>
                 Event type
-
                 <select id="eventType" required>
                   <option value="">Choose one</option>
                   <option>Birthday</option>
@@ -656,7 +581,6 @@
                   data-price="10"
                   checked
                 />
-
                 <span>
                   <strong>Basic</strong>
                   <small>$10 · 1 revision</small>
@@ -670,7 +594,6 @@
                   value="Interactive - $15"
                   data-price="15"
                 />
-
                 <span>
                   <strong>Interactive</strong>
                   <small>$15 · RSVP · 3 revisions</small>
@@ -684,7 +607,6 @@
                   value="Premium Custom - $20"
                   data-price="20"
                 />
-
                 <span>
                   <strong>Premium</strong>
                   <small>$20 · Interactive · 5 revisions</small>
@@ -699,7 +621,6 @@
             <div class="checkbox-grid">
               <label class="check-option">
                 <input type="checkbox" id="extraRevision" />
-
                 <span>
                   Extra revision
                   <strong>+$3</strong>
@@ -708,7 +629,6 @@
 
               <label class="check-option">
                 <input type="checkbox" id="rushOrder" />
-
                 <span>
                   Rush order
                   <strong>+$7</strong>
@@ -721,14 +641,12 @@
             <div class="idea-header">
               <div>
                 <h3>04 — Tell us about it</h3>
-                <p>Not sure what to choose? Use the surprise feature.</p>
+                <p>
+                  Not sure what to choose? Let Party Pixel pick a theme for you.
+                </p>
               </div>
 
-              <button
-                type="button"
-                class="surprise-button"
-                id="surpriseMe"
-              >
+              <button type="button" class="surprise-button" id="surpriseMe">
                 ✦ Surprise Me
               </button>
             </div>
@@ -736,18 +654,16 @@
             <div class="form-grid">
               <label>
                 Theme
-
                 <input
                   type="text"
                   id="theme"
-                  placeholder="Basketball, gaming, elegant..."
+                  placeholder="Basketball, gaming, Halloween..."
                   required
                 />
               </label>
 
               <label>
                 Colors
-
                 <input
                   type="text"
                   id="colors"
@@ -757,7 +673,6 @@
 
               <label class="full-width">
                 Event details
-
                 <textarea
                   id="eventDetails"
                   rows="5"
@@ -768,7 +683,6 @@
 
               <label class="full-width">
                 Extra requests
-
                 <textarea
                   id="extraRequests"
                   rows="4"
@@ -787,10 +701,7 @@
           <div class="order-total">
             <div>
               <span>Estimated total</span>
-
-              <small>
-                Final price can be confirmed in Instagram.
-              </small>
+              <small>Final price can be confirmed in Instagram.</small>
             </div>
 
             <strong id="orderTotal">$10</strong>
@@ -801,22 +712,18 @@
           </button>
 
           <p class="order-note">
-            The site prepares and copies your order. Instagram opens next, and
-            you paste the message into your DM to
+            Your order is copied automatically. Instagram opens next so you can
+            paste the message into your DM to
             <strong>@party_pixelstudio</strong>
             and press Send.
           </p>
         </form>
       </section>
 
-      <!-- =========================
-           PROCESS
-      ========================== -->
-
+      <!-- PROCESS -->
       <section class="section how-section">
         <div class="section-heading">
           <span class="section-label">THE PROCESS</span>
-
           <h2>From idea to invite.</h2>
         </div>
 
@@ -847,10 +754,7 @@
         </div>
       </section>
 
-      <!-- =========================
-           UPDATES
-      ========================== -->
-
+      <!-- UPDATES -->
       <section class="section subscribe-section" id="subscribe">
         <div class="subscribe-box">
           <span class="section-label">PARTY PIXEL UPDATES</span>
@@ -872,26 +776,19 @@
               required
             />
 
-            <button type="submit" class="btn btn-primary">
-              Join Updates
-            </button>
+            <button type="submit" class="btn btn-primary">Join Updates</button>
           </form>
 
           <p class="subscribe-small">
-            No fake signup: the request is copied and sent through Instagram for
-            you to confirm.
+            Your request is copied and prepared for Instagram.
           </p>
         </div>
       </section>
 
-      <!-- =========================
-           INSTAGRAM
-      ========================== -->
-
+      <!-- INSTAGRAM -->
       <section class="instagram-cta">
         <div>
           <span>READY?</span>
-
           <h2>Let's make your invitation.</h2>
         </div>
 
@@ -905,14 +802,10 @@
         </a>
       </section>
 
-      <!-- =========================
-           FAQ
-      ========================== -->
-
+      <!-- FAQ -->
       <section class="section faq-section" id="faq">
         <div class="section-heading">
           <span class="section-label">FAQ</span>
-
           <h2>Good to know.</h2>
         </div>
 
@@ -973,9 +866,8 @@
 
             <div class="faq-answer">
               <p>
-                The website prepares and copies your order message, then opens
-                Instagram. You paste it into your DM to @party_pixelstudio and
-                press Send.
+                Fill out the order form, click Prepare My Instagram Order, then
+                paste the copied message into your DM to @party_pixelstudio.
               </p>
             </div>
           </div>
@@ -988,10 +880,9 @@
 
             <div class="faq-answer">
               <p>
-                Enter your email in the Updates section. The site prepares a DM
-                request, you send it to Party Pixel Studio, and you can be
-                contacted when new designs, offers or announcements are
-                available.
+                Enter your email in the Updates section. The website prepares a
+                request that you can send to Party Pixel Studio through
+                Instagram.
               </p>
             </div>
           </div>
@@ -999,10 +890,7 @@
       </section>
     </main>
 
-    <!-- =========================
-         CHAT BUTTON
-    ========================== -->
-
+    <!-- CHAT BUTTON -->
     <button
       class="chat-button"
       id="chatButton"
@@ -1012,17 +900,12 @@
       ✦
     </button>
 
-    <!-- =========================
-         CHAT
-    ========================== -->
-
+    <!-- CHAT -->
     <div class="chat-box" id="chatBox" aria-hidden="true">
       <div class="chat-header">
         <strong>Party Pixel Assistant</strong>
 
-        <button id="closeChat" type="button" aria-label="Close chat">
-          ×
-        </button>
+        <button id="closeChat" type="button" aria-label="Close chat">×</button>
       </div>
 
       <div class="chat-messages" id="chatMessages">
@@ -1044,10 +927,7 @@
       </form>
     </div>
 
-    <!-- =========================
-         MODAL
-    ========================== -->
-
+    <!-- MODAL -->
     <div class="modal" id="actionModal" aria-hidden="true">
       <div class="modal-backdrop" data-close-modal></div>
 
@@ -1075,19 +955,11 @@
         <textarea id="modalMessage" readonly></textarea>
 
         <div class="modal-actions">
-          <button
-            class="btn btn-outline"
-            id="copyModalMessage"
-            type="button"
-          >
+          <button class="btn btn-outline" id="copyModalMessage" type="button">
             Copy Again
           </button>
 
-          <button
-            class="btn btn-primary"
-            id="openInstagram"
-            type="button"
-          >
+          <button class="btn btn-primary" id="openInstagram" type="button">
             Open Instagram ↗
           </button>
         </div>
@@ -1098,14 +970,10 @@
       </div>
     </div>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
       <div class="footer-main">
-        <img src="image/logo.png" alt="Party Pixel Studio" />
-
+        <img src="image/halloweenlogo.png" alt="Party Pixel Studio" />
         <p>Custom digital invitations for your celebrations.</p>
       </div>
 
@@ -1121,7 +989,6 @@
         <a href="mailto:partypixelstudio1@gmail.com">Email</a>
 
         <a href="#pricing">Pricing</a>
-
         <a href="#order">Order</a>
       </div>
 
