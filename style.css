@@ -2159,3 +2159,39 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+/* ================================
+   MOBILE AI BUTTON FIX
+================================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.chat-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  max-width: calc(100vw - 40px);
+}
+
+@media (max-width: 600px) {
+  .chat-button {
+    right: 15px;
+    bottom: 15px;
+    transform: none;
+    width: auto;
+    max-width: calc(100vw - 30px);
+  }
+
+  .chat-box {
+    right: 15px;
+    left: 15px;
+    width: auto;
+    max-width: calc(100vw - 30px);
+  }
+}
